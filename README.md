@@ -14,12 +14,12 @@ Run every day at 2 am
 
 ```bash
 docker run -d --name mongodump \
-  -e "MONGO_URI=mongodb://user:pass@host:port/dbname"
-  -e "AWS_ACCESS_KEY_ID=your_aws_access_key"
-  -e "AWS_SECRET_ACCESS_KEY=your_aws_secret_access_key"
-  -e "AWS_DEFAULT_REGION=us-west-1"
-  -e "S3_BUCKET=your_aws_bucket"
-  -e "BACKUP_CRON_SCHEDULE=0 2 * * *"
+  -e "MONGO_URI=mongodb://user:pass@host:port/dbname" \
+  -e "AWS_ACCESS_KEY_ID=your_aws_access_key" \
+  -e "AWS_SECRET_ACCESS_KEY=your_aws_secret_access_key" \
+  -e "AWS_DEFAULT_REGION=us-west-1" \
+  -e "S3_BUCKET=your_aws_bucket" \
+  -e "BACKUP_CRON_SCHEDULE=0 2 * * *" \
   vikasy/mongodump-s3
 ```
 
@@ -27,13 +27,13 @@ Run every day at 2 am with full mongodb
 
 ```bash
 docker run -d --name mongodump \
-  -e "MONGO_URI=mongodb://user:pass@host:port/dbname"
+  -e "MONGO_URI=mongodb://user:pass@host:port/dbname" \
   -e "AWS_ACCESS_KEY_ID=your_aws_access_key"
-  -e "AWS_SECRET_ACCESS_KEY=your_aws_secret_access_key"
-  -e "AWS_DEFAULT_REGION=us-west-1"
-  -e "S3_BUCKET=your_aws_bucket"
-  -e "BACKUP_CRON_SCHEDULE=0 2 * * *"
-  -e "MONGO_COMPLETE=true"
+  -e "AWS_SECRET_ACCESS_KEY=your_aws_secret_access_key" \
+  -e "AWS_DEFAULT_REGION=us-west-1" \
+  -e "S3_BUCKET=your_aws_bucket" \
+  -e "BACKUP_CRON_SCHEDULE=0 2 * * *" \
+  -e "MONGO_COMPLETE=true" \
   vikasy/mongodump-s3
 ```
 
@@ -41,15 +41,15 @@ Run every day at 2 am with full mongodb and keep last 5 backups
 
 ```bash
 docker run -d --name mongodump \
-  -v /tmp/backup:/backup
-  -e "MONGO_URI=mongodb://user:pass@host:port/dbname"
-  -e "AWS_ACCESS_KEY_ID=your_aws_access_key"
-  -e "AWS_SECRET_ACCESS_KEY=your_aws_secret_access_key"
-  -e "AWS_DEFAULT_REGION=us-west-1"
-  -e "S3_BUCKET=your_aws_bucket"
-  -e "BACKUP_CRON_SCHEDULE=0 2 * * *"
-  -e "MONGO_COMPLETE=true"
-  -e "MAX_BACKUPS=5"
+  -v /tmp/backup:/backup \
+  -e "MONGO_URI=mongodb://user:pass@host:port/dbname" \
+  -e "AWS_ACCESS_KEY_ID=your_aws_access_key" \
+  -e "AWS_SECRET_ACCESS_KEY=your_aws_secret_access_key" \
+  -e "AWS_DEFAULT_REGION=us-west-1" \
+  -e "S3_BUCKET=your_aws_bucket" \
+  -e "BACKUP_CRON_SCHEDULE=0 2 * * *" \
+  -e "MONGO_COMPLETE=true" \
+  -e "MAX_BACKUPS=5" \
   vikasy/mongodump-s3
 ```
 
@@ -57,23 +57,23 @@ docker run -d --name mongodump \
 
 ```bash
 docker run -d --name mongodump \
-  -e "MONGO_URI=mongodb://user:pass@host:port/dbname"
-  -e "AWS_ACCESS_KEY_ID=your_aws_access_key"
-  -e "AWS_SECRET_ACCESS_KEY=your_aws_secret_access_key"
-  -e "AWS_DEFAULT_REGION=us-west-1"
-  -e "S3_BUCKET=your_aws_bucket"
+  -e "MONGO_URI=mongodb://user:pass@host:port/dbname" \
+  -e "AWS_ACCESS_KEY_ID=your_aws_access_key" \
+  -e "AWS_SECRET_ACCESS_KEY=your_aws_secret_access_key" \
+  -e "AWS_DEFAULT_REGION=us-west-1" \
+  -e "S3_BUCKET=your_aws_bucket" \
   vikasy/mongodump-s3
 ```
 
 ### Slack Hook
 ```bash
 docker run -d --name mongodump \
-  -e "MONGO_URI=mongodb://user:pass@host:port/dbname"
-  -e "AWS_ACCESS_KEY_ID=your_aws_access_key"
-  -e "AWS_SECRET_ACCESS_KEY=your_aws_secret_access_key"
-  -e "AWS_DEFAULT_REGION=us-west-1"
-  -e "S3_BUCKET=your_aws_bucket"
-  -e "SLACK_URI=your_slack_uri"
+  -e "MONGO_URI=mongodb://user:pass@host:port/dbname" \
+  -e "AWS_ACCESS_KEY_ID=your_aws_access_key" \
+  -e "AWS_SECRET_ACCESS_KEY=your_aws_secret_access_key" \
+  -e "AWS_DEFAULT_REGION=us-west-1" \
+  -e "S3_BUCKET=your_aws_bucket" \
+  -e "SLACK_URI=your_slack_uri" \
   vikasy/mongodump-s3
 ```
 
