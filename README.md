@@ -20,7 +20,7 @@ docker run -d --name mongodump \
   -e "AWS_DEFAULT_REGION=us-west-1"
   -e "S3_BUCKET=your_aws_bucket"
   -e "BACKUP_CRON_SCHEDULE=0 2 * * *"
-  lgatica/mongodump-s3
+  vikasy/mongodump-s3
 ```
 
 Run every day at 2 am with full mongodb
@@ -34,7 +34,7 @@ docker run -d --name mongodump \
   -e "S3_BUCKET=your_aws_bucket"
   -e "BACKUP_CRON_SCHEDULE=0 2 * * *"
   -e "MONGO_COMPLETE=true"
-  lgatica/mongodump-s3
+  vikasy/mongodump-s3
 ```
 
 Run every day at 2 am with full mongodb and keep last 5 backups
@@ -50,7 +50,7 @@ docker run -d --name mongodump \
   -e "BACKUP_CRON_SCHEDULE=0 2 * * *"
   -e "MONGO_COMPLETE=true"
   -e "MAX_BACKUPS=5"
-  lgatica/mongodump-s3
+  vikasy/mongodump-s3
 ```
 
 ### Immediate backup
@@ -62,7 +62,7 @@ docker run -d --name mongodump \
   -e "AWS_SECRET_ACCESS_KEY=your_aws_secret_access_key"
   -e "AWS_DEFAULT_REGION=us-west-1"
   -e "S3_BUCKET=your_aws_bucket"
-  lgatica/mongodump-s3
+  vikasy/mongodump-s3
 ```
 
 ### Slack Hook
@@ -74,7 +74,7 @@ docker run -d --name mongodump \
   -e "AWS_DEFAULT_REGION=us-west-1"
   -e "S3_BUCKET=your_aws_bucket"
   -e "SLACK_URI=your_slack_uri"
-  lgatica/mongodump-s3
+  vikasy/mongodump-s3
 ```
 
 
