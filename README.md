@@ -15,7 +15,7 @@ This project is a fork of Drivetech/mongodump-s3 which is no longer maintained. 
 
 ## Use
 
-NOTE: You can take backup to any s3 compatible storage, not just AWS S3. Just use environment variable `AWS_S3_ENDPOINT=<s3-endpoint` to specify the s3 endpoint which you want to use.
+NOTE: You can take backup to any s3 compatible storage, not just AWS S3. Just use environment variable `AWS_S3_ENDPOINT=<s3-endpoint>` to specify the s3 endpoint which you want to use.
 
 ### Periodic backup
 
