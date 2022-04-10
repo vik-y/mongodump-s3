@@ -6,6 +6,13 @@
 
 > Docker Image with Alpine Linux, mongodump and awscli for backup mongo database to s3
 
+## New Features 
+This project is a fork of Drivetech/mongodump-s3 which is no longer maintained. I have added a lot more features into this fork. Majorly 
+1. Slack notifications support
+2. Support for using any S3 compatible storage endpoint
+3. Support for mongodb 4.x versions 
+4. Added tests backed by github actions to ensure the backups actually work
+
 ## Use
 
 ### Periodic backup
@@ -120,6 +127,13 @@ You need to add a user with the following policies. Be sure to change `your_buck
 - `BACKUP_NAME` - Default is `$(date -u +%Y-%m-%d_%H-%M-%S)_UTC.gz`. If set this is the name of the backup file. Useful when using s3 versioning. (Remember to place .gz extension on your filename)
 - `EXTRA_OPTIONS` - Default not set.
 - `SLACK_URI` - Default not set. Sends a curl notification to the Slack Incoming Webhook.
+
+## Development Plans 
+
+Features to be implemented 
+- [ ] kubernetes yaml files and examples 
+- [ ] Update CI to push images to docker hub 
+- [ ] Improve tests to cover more scenarios 
 
 ## Troubleshoot
 
