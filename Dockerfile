@@ -2,7 +2,7 @@ FROM alpine:3.13.6
 
 MAINTAINER Leonardo Gatica <lgatica@protonmail.com>
 
-RUN apk add --no-cache mongodb-tools=4.2.9-r0 py3-pip python3 && \
+RUN apk add --no-cache mongodb-tools=4.2.9-r0 py3-pip python3 curl && \
   pip install pymongo awscli && \
   mkdir /backup
 
