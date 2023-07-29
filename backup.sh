@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+##!/usr/bin/env sh
 
 OPTIONS=`python3 /usr/local/bin/mongouri`
 OPTIONS="$OPTIONS $EXTRA_OPTIONS"
