@@ -1,7 +1,6 @@
 #!/usr/bin/env sh
 
-OPTIONS=`python3 /usr/local/bin/mongouri`
-OPTIONS="$OPTIONS $EXTRA_OPTIONS"
+OPTIONS="$MONGO_URI $EXTRA_OPTIONS"
 DEFAULT_BACKUP_NAME="$(date -u +%Y-%m-%d_%H-%M-%S)_UTC.gz"
 BACKUP_NAME=${BACKUP_NAME:-$DEFAULT_BACKUP_NAME}
 LOCAL_BACKUP_ROOT_FOLDER="/backup"
