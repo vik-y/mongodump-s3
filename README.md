@@ -134,7 +134,7 @@ You need to add a user with the following policies. Be sure to change `your_buck
 
 Features to be implemented 
 - [ ] kubernetes yaml files and examples 
-- [ ] Update CI to push images to docker hub 
+- [*] Update CI to push images to docker hub 
 - [ ] Improve tests to cover more scenarios 
 
 ## Troubleshoot

@@ -11,7 +11,7 @@ on:
       - '**/README.md'
       
 jobs:
-  test:
+  test_and_push:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code Repository
@@ -75,5 +75,13 @@ jobs:
             -e "AWS_DEFAULT_REGION=us-west-1" \
             -e "S3_BUCKET=mongodb" \
             mongo-backup
+      
+      - name: Push to Docker Hub
+        env:
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+        run: |
+          docker login -u vikasy -p $DOCKER_PASSWORD
+          docker tag mongo-backup vikasy/mongodump-s3
+          docker push vikasy/mongodump-s3
 
     
