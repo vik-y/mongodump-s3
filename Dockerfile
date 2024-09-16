@@ -1,10 +1,17 @@
-FROM alpine:3.13.6
+FROM ubuntu:22.04@sha256:965fbcae990b0467ed5657caceaec165018ef44a4d2d46c7cdea80a9dff0d1ea
 
-MAINTAINER Leonardo Gatica <lgatica@protonmail.com>
+RUN apt-get -y update && apt-get -y install --no-install-recommends \
+    python3 \
+    python3-pymongo \
+    curl \
+    wget \
+    awscli
 
-RUN apk add --no-cache mongodb-tools=4.2.9-r0 py3-pip python3 curl && \
-  pip install pymongo awscli && \
-  mkdir /backup
+RUN wget https://fastdl.mongodb.org/tools/db/mongodb-database-tools-ubuntu2204-x86_64-100.6.1.deb -O /tmp/mongodb-tools.deb && \
+    dpkg -i /tmp/mongodb-tools.deb && \
+    rm /tmp/mongodb-tools.deb
+
+RUN mkdir /backup
 
 ENV S3_PATH=mongodb AWS_DEFAULT_REGION=us-east-1
 
